@@ -22,13 +22,12 @@ async.waterfall([
     })
   },
 
-  // req.ua should be an object
-  // res.locals.ua should be a string
+  // should be an object
   function(msg, cb) {
     req.headers.accept = "text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8"
     expressUA(req, res, function(){
       assert.equal(typeof req.ua, 'object')
-      assert.equal(typeof res.locals.ua, 'string')
+      assert.equal(typeof res.locals.ua, 'object')
       cb(null, true)
     })
   },
@@ -40,7 +39,7 @@ async.waterfall([
       assert.equal(req.ua.browser, 'wk')
       assert.equal(req.ua.ver, '40')
       assert.equal(req.ua.os, 'Windows')
-      assert.equal(res.locals.ua, 'ua-wk ua-wk40 ua-win')
+      assert.equal(res.locals.ua.join(' '), 'ua-wk ua-wk40 ua-win')
       assert.ok(!req.ua.device)
       assert.ok(req.ua.isModern)
       cb(null, true)
@@ -51,7 +50,7 @@ async.waterfall([
   function(msg, cb) {
     req.headers['user-agent'] = "Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; SV1; .NET CLR 1.1.4322; .NET CLR 2.0.40607; .NET CLR 1.0.3705)"
     expressUA(req, res, function(){
-      assert.equal(res.locals.ua, 'ua-ie ua-ie6 ua-win')
+      assert.equal(res.locals.ua.join(' '), 'ua-ie ua-ie6 ua-win')
       assert.ok(req.ua.isObsolete)
       cb(null, true)
     })
@@ -69,7 +68,7 @@ async.waterfall([
   function(msg, cb) {
     req.headers['user-agent'] = "Mozilla/5.0 (Windows; U; Windows NT 6.0; ja; rv:1.9.0.6) Gecko/2009011913 Firefox/3.0.6 (.NET CLR 3.5.30729)"
     expressUA(req, res, function(){
-      assert.equal(res.locals.ua, 'ua-ff ua-ff3 ua-win')
+      assert.equal(res.locals.ua.join(' '), 'ua-ff ua-ff3 ua-win')
       cb(null, true)
     })
   },
@@ -78,7 +77,7 @@ async.waterfall([
   function(msg, cb) {
     req.headers['user-agent'] = "Mozilla/5.0 (Macintosh; U; Intel Mac OS X; ja-jp) AppleWebKit/523.10.3 (KHTML, like Gecko) Version/3.0.4 Safari/523.10"
     expressUA(req, res, function(){
-      assert.equal(res.locals.ua, 'ua-wk ua-wk3 ua-mac')
+      assert.equal(res.locals.ua.join(' '), 'ua-wk ua-wk3 ua-mac')
       cb(null, true)
     })
   },
@@ -87,7 +86,7 @@ async.waterfall([
   function(msg, cb) {
     req.headers['user-agent'] = "Opera/9.80 (Macintosh; Intel Mac OS X 10.6.8; U; ja) Presto/2.10.289 Version/12.00"
     expressUA(req, res, function(){
-      assert.equal(res.locals.ua, 'ua-op ua-op12 ua-mac')
+      assert.equal(res.locals.ua.join(' '), 'ua-op ua-op12 ua-mac')
       cb(null, true)
     })
   },
