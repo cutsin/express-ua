@@ -5,8 +5,8 @@
 [![Build Status][travis-image]][travis-url]
 [![Test Coverage][coveralls-image]][coveralls-url]
 
-## Print YUI style userAgent info on html & req.ua
-## Classify browser type by modern/mobile/obsolete
+Print YUI style userAgent info on html & req.ua
+Classify browser type by modern/mobile/obsolete
 
 ## Usage
 
