@@ -9,7 +9,7 @@ var perfix = 'ua-'
 
 module.exports = function(req, res, next) {
   // html request only
-  if (!~req.headers.accept.indexOf('text/html','application/xhtml+xml','application/xml')) return next()
+  if (req.method !== 'GET' || !~req.headers.accept.indexOf('text/html','application/xhtml+xml','application/xml', 'application/json', 'text/plain')) return next()
 
   var userAgent = req.headers['user-agent'],
       agent = useragent.parse(userAgent),

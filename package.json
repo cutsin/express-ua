@@ -1,6 +1,6 @@
 {
   "name": "express-ua",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "Middleware for Express, print YUI style userAgent info on html & req.ua, classify browser type by modern/mobile/obsolete",
   "main": "index.js",
   "scripts": {
