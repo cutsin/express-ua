@@ -10,7 +10,7 @@
 
 ## Usage
 
-for a express middleware:
+for express middleware:
 ```
 	...
 	app.use(require('express-ua'))
@@ -22,7 +22,7 @@ for a express middleware:
 
 ```
 
-for a jade template:
+for jade template:
 ```
 	html(class="#{ua}")
 	<!-- <html class="ua-ie ua-ie11 ua-win"> -->
