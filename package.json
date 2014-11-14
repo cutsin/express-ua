@@ -1,0 +1,28 @@
+{
+  "name": "express-ua",
+  "version": "0.0.1",
+  "description": "Middleware for Express, print YUI style userAgent info on html & req.ua, classify browser type by modern/mobile/obsolete",
+  "main": "index.js",
+  "scripts": {
+    "test": "node test"
+  },
+  "keywords": [
+    "express",
+    "useragent",
+    "ua"
+  ],
+  "dependencies": {
+    "accepts":"~1.1.3",
+    "useragent": "~2.1.1"
+  },
+  "devDependencies": {
+    "async": "*"
+  },
+  "repository": "cutsin/express-ua",
+  "author": "Cutsin <cutsin@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/cutsin/express-ua/issues"
+  },
+  "homepage": "https://github.com/cutsin/express-ua"
+}
