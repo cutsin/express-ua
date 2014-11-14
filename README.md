@@ -25,8 +25,8 @@ for a express middleware:
 for a jade template:
 ```
 	html(class="#{ua}")
+	<!-- <html class="ua-ie ua-ie11 ua-win"> -->
 ```
->>> <html class="ua-ie ua-ie11 ua-win">
 
 
 ## License
