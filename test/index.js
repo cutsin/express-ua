@@ -3,6 +3,7 @@ var assert = require('assert')
 var async = require('async')
 
 var req = {
+  "method": "GET",
   "headers": {
     "accept": "*/*",
     "user-agent": ""
