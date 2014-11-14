@@ -3,7 +3,7 @@ var assert = require('assert')
 var async = require('async')
 
 var req = {
-  "method": "GET",
+  "method": "POST",
   "headers": {
     "accept": "*/*",
     "user-agent": ""
@@ -15,8 +15,16 @@ var next = function(){}
 
 async.waterfall([
 
-  // discard non-html
+  // discard POST
   function(cb){
+    expressUA(req, res, function(){
+      cb(null, assert.equal(req.ua, undefined))
+    })
+  },
+
+  // discard non-html
+  function(msg, cb){
+    req.method = 'GET'
     expressUA(req, res, function(){
       cb(null, assert.equal(req.ua, undefined))
     })
