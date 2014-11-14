@@ -45,7 +45,7 @@ module.exports = function(req, res, next) {
   var isMobile =  ( is.mobile_safari ) ? true : false
 
   // mount to req, res
-  res.locals.ua = ua.join(' ')
+  res.locals.ua = ua
   req.ua = {
     os: os,
     browser: browser,

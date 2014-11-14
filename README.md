@@ -24,7 +24,7 @@ for express middleware:
 
 for jade template:
 ```
-	html(class="#{ua}")
+	html(class="#{ua&&ua.join(' ')||''}")
 	<!-- <html class="ua-ie ua-ie11 ua-win"> -->
 ```
 
