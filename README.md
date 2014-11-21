@@ -19,13 +19,22 @@ for express middleware:
 		console.log(req.ua)
 	})
 	...
+	output example: 
+  {
+    os: 'Windows',
+    browser: 'Chrome',
+    ver: '40',
+    isModern: true,
+    isMobile: false,
+    isObsolete: false
+  }
 
 ```
 
 for jade template:
 ```
 	html(class="#{ua&&ua.join(' ')||''}")
-	<!-- <html class="ua-ie ua-ie11 ua-win"> -->
+	<!-- <html class="ua-wk ua-wk40 ua-win"> -->
 ```
 
 
